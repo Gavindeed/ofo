@@ -53,7 +53,7 @@
 					die("Connection failed! " . $conn->connect_error);
 				}
 
-				/*
+				
 				$user_id = $_GET["user_id"];
 
 				$sql = "select * from Location";
@@ -66,7 +66,7 @@
 						$locations[$row["Location_ID"]] = $row["Location_name"];
 					}
 				}
-
+				/*
 				foreach($locations as $id=>$name) {
 					$sql = "select count(Bike_ID) from Bike where Location_ID=" . $id;
 					$result = $conn->query($sql);
