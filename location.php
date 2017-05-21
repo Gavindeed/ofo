@@ -58,7 +58,7 @@
 
 				$sql = "select * from Location";
 				$result = $conn->query($sql);
-
+				/*
 				$locations = new array();
 
 				if($result->num_rows > 0) {
@@ -66,7 +66,7 @@
 						$locations[$row["Location_ID"]] = $row["Location_name"];
 					}
 				}
-				/*
+
 				foreach($locations as $id=>$name) {
 					$sql = "select count(Bike_ID) from Bike where Location_ID=" . $id;
 					$result = $conn->query($sql);
