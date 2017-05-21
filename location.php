@@ -53,6 +53,7 @@
 					die("Connection failed! " . $conn->connect_error);
 				}
 
+				/*
 				$user_id = $_GET["user_id"];
 
 				$sql = "select * from Location";
@@ -76,7 +77,7 @@
 					print $name . "\n";
 					print "</li>\n";
 				}
-
+				*/
 				$conn->close();
 
 			?>
