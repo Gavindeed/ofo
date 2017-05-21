@@ -1,7 +1,8 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 4.0                                    */
-/* Created on:     2017/5/21 21:56:29                           */
+/* Created on:     2017/5/21 22:01:54                           */
 /*==============================================================*/
+
 use ofo;
 
 drop index EndingLocation_FK on Account;
@@ -97,7 +98,7 @@ create table Bike
    Password                       varchar(32)                    not null,
    Age                            int                            not null,
    Is_broken                      blob                           not null,
-   In_use                         VBIN1                          not null,
+   In_use                         blob                           not null,
    primary key (Bike_ID)
 )
 type = InnoDB;
