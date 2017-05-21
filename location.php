@@ -58,8 +58,8 @@
 
 				$sql = "select * from Location";
 				$result = $conn->query($sql);
-				/*
-				$locations = new array();
+				
+				$locations = array();
 
 				if($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) {
@@ -77,7 +77,7 @@
 					print $name . "\n";
 					print "</li>\n";
 				}
-				*/
+				
 				$conn->close();
 
 			?>
