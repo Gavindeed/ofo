@@ -2,7 +2,7 @@
 /* DBMS name:      MySQL 4.0                                    */
 /* Created on:     2017/5/21 21:56:29                           */
 /*==============================================================*/
-
+use ofo;
 
 drop index EndingLocation_FK on Account;
 
