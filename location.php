@@ -72,19 +72,15 @@
 					$result = $conn->query($sql);
 					$row = $result->fetch_assoc();
 					$number = $row["count(Bike_ID)"];
-					print "<li class=\"list-group-item\">\n";
+					print "<a href=\"#\" class=\"list-group-item\">\n";
 					print "<span class=\"badge\">" . $number . "</span>\n";
 					print $name . "\n";
-					print "</li>\n";
+					print "</a>\n";
 				}
 				
 				$conn->close();
 
 			?>
-  			<li class="list-group-item">
-    			<span class="badge">14</span>
-    			Cras justo odio
-  			</li>
 		</ul>
 
 	</body>
