@@ -57,7 +57,7 @@
 									print "<script>alert(\"Wrong password!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
 							} else if($_SESSION["user_id"] != "") {
-								$sql = "select * from User where User_ID=" . $user_id;
+								$sql = "select * from User where User_ID=" . $_SESSION["user_id"];
 								$result = $conn->query($sql);
 
 								if($result->num_rows > 0) {
