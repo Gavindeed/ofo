@@ -45,6 +45,7 @@
 								die("Connection failed! " . $conn->connect_error);
 							}
 
+/*
 							if(isset($_POST["User_name"]) && isset($_POST["Password"])) {
 								$sql = "select * from User where User_name=" . $_POST["User_name"] . " and Password=" . $_POST["Password"];
 								$result = $conn->query($sql);
@@ -76,7 +77,7 @@
 								} else {
 									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else {
+							} else */{
 								print "<script>alert(\"No user specified!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 							}
 
