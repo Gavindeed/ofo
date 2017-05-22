@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     2017/5/21 22:04:36                           */
+/* Created on:     2017/5/22 22:16:06                           */
 /*==============================================================*/
 use ofo;
 
@@ -93,6 +93,7 @@ create table User
    User_ID              int not null,
    Bike_ID              int,
    User_name            varchar(64) not null,
+   Password             varchar(32) not null,
    Balance              float not null,
    primary key (User_ID)
 );
