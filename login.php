@@ -28,7 +28,7 @@
 					</div>
 					<div class="input-group" style="margin:2%">
 						<span class="input-group-addon" id="basic-addon1">*</span>
-						<input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="Password">
+						<input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="Password">
 					</div>
 					<button type="submit" class="btn btn-default">Submit</button>
 				</form>
