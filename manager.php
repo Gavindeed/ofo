@@ -68,6 +68,7 @@
 								}
 							} else if($_GET["user_id"] != "") {
 								$user_id = $_GET["user_id"];
+								$_SESSION["user_id"] = $row["User_ID"];
 								$sql = "select * from User where User_ID=" . $user_id;
 								$result = $conn->query($sql);
 
