@@ -45,8 +45,8 @@
 								die("Connection failed! " . $conn->connect_error);
 							}
 
-/*
-							if(isset($_POST["User_name"]) && isset($_POST["Password"])) {
+
+							if($_POST["User_name"] != "" && $_POST["Password"] != "") {
 								$sql = "select * from User where User_name=" . $_POST["User_name"] . " and Password=" . $_POST["Password"];
 								$result = $conn->query($sql);
 								if($result->num_rows > 0) {
@@ -56,7 +56,7 @@
 								} else {
 									print "<script>alert(\"Wrong password!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else if(isset($_SESSION["user_id"])) {
+							} else if($_SESSION["user_id"] != "") {
 								$sql = "select * from User where User_ID=" . $user_id;
 								$result = $conn->query($sql);
 
@@ -66,7 +66,7 @@
 								} else {
 									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else */if($_GET["user_id"] != "") {
+							} else if($_GET["user_id"] != "") {
 								$user_id = $_GET["user_id"];
 								$sql = "select * from User where User_ID=" . $user_id;
 								$result = $conn->query($sql);
