@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -35,7 +36,6 @@
 					<ul class="nav navbar-nav">
 						<p class="navbar-text">
 						<?php
-							session_start();
 							$servername = "localhost";
 							$username = "root";
 
@@ -52,7 +52,7 @@
 								if($result->num_rows > 0) {
 									$row = $result->fetch_assoc();
 									print $row["User_name"];
-									$_SESSION["user_id"] = $row["User_ID"];
+									$_COOKIE["user_id"] = $row["User_ID"];
 								} else {
 									print "<script>alert(\"Wrong password!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
@@ -87,8 +87,8 @@
 						<li><a href="#">Profile</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Logout</a></li>
-						<li><a href="#">Register</a></li>
+						<li><a href="index.html">Logout</a></li>
+						<li><a href="register.php">Register</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
