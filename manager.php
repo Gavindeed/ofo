@@ -66,7 +66,7 @@
 								} else {
 									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else */if(isset($_GET["user_id"]) {
+							} else */if(true) {
 								$user_id = $_GET["user_id"];
 								$sql = "select * from User where User_ID=" . $user_id;
 								$result = $conn->query($sql);
