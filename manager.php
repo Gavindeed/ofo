@@ -66,7 +66,7 @@
 								} else {
 									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else if(isset($_GET["user_id"]) {
+							} else */if(isset($_GET["user_id"]) {
 								$user_id = $_GET["user_id"];
 								$sql = "select * from User where User_ID=" . $user_id;
 								$result = $conn->query($sql);
@@ -77,7 +77,7 @@
 								} else {
 									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else */{
+							} else {
 								print "<script>alert(\"No user specified!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 							}
 
