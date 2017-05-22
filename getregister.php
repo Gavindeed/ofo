@@ -17,7 +17,7 @@
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
 		$newid = $row["max(User_ID)"] + 1;
-		$sql = "insert into User(User_ID, Bike_ID, User_name, Password, Balance) values(" . $newid . ", null, \"" . $_POST["User_name"] . "\", \"" . $_POST["Passowrd"] . "\", 0)";
+		$sql = "insert into User(User_ID, Bike_ID, User_name, Password, Balance) values(" . $newid . ", null, \"" . $_POST["User_name"] . "\", \"" . $_POST["Password"] . "\", 0)";
 		$conn->query($sql);
 		print "<script>alert(\"Register succeed!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 	}
