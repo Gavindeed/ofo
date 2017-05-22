@@ -54,7 +54,7 @@
 									print $row["User_name"];
 									$_SESSION["User_ID"] = $row["User_ID"];
 								} else {
-									print "<script>alert(\"Wrong password!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
+									print "<script>alert(\"Wrong password!" . $_POST["User_name"] . "&" . $_POST["Password"] . "\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
 							} else if($_SESSION["User_ID"] != "") {
 								$sql = "select * from User where User_ID=" . $_SESSION["User_ID"];
