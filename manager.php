@@ -9,6 +9,8 @@
 		<!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+		<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
 		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
@@ -63,9 +65,19 @@
 			</div><!-- /.container-fluid -->
 		</nav>
 
-		<div class="jumbotron" style="backgroud-image:url('usebike.jpg');margin:5%">
-			<h1>You can use bikes right now!</h1>
-			<p><a class="btn btn-primary btn-lg" href="#" role="button">Use Bikes</a></p>
+		<div class="jumbotron" style="background-image:url('usebike.jpg');background-size:100% 100%;margin:5%">
+			<h1 style="color:#8080ff;text-align:center">You can use bikes right now!</h1>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="#" role="button">Use Bikes</a></p>
+		</div>
+
+		<div class="jumbotron" style="background-image:url('route.jpg');background-size:100% 100%;margin:5%">
+			<h1 style="color:#8080ff;text-align:center">Where have I gone by using ofo?</h1>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="#" role="button">Check history routes</a></p>
+		</div>
+
+		<div class="jumbotron" style="background-image:url('recharge.jpg');background-size:100% 100%;margin:5%">
+			<h1 style="color:#8080ff;text-align:center">My balance is not enough for another trip?</h1>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="#" role="button">Recharge &amp; History recharge</a></p>
 		</div>
 
 	</body>
