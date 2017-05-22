@@ -52,12 +52,12 @@
 								if($result->num_rows > 0) {
 									$row = $result->fetch_assoc();
 									print $row["User_name"];
-									$_COOKIE["user_id"] = $row["User_ID"];
+									$_SESSION["User_ID"] = $row["User_ID"];
 								} else {
 									print "<script>alert(\"Wrong password!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else if($_SESSION["user_id"] != "") {
-								$sql = "select * from User where User_ID=" . $_SESSION["user_id"];
+							} else if($_SESSION["User_ID"] != "") {
+								$sql = "select * from User where User_ID=" . $_SESSION["User_ID"];
 								$result = $conn->query($sql);
 
 								if($result->num_rows > 0) {
@@ -66,9 +66,9 @@
 								} else {
 									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 								}
-							} else if($_GET["user_id"] != "") {
-								$user_id = $_GET["user_id"];
-								$_SESSION["user_id"] = $_GET["user_id"];
+							} else if($_GET["User_ID"] != "") {
+								$user_id = $_GET["User_ID"];
+								$_SESSION["User_ID"] = $_GET["User_ID"];
 								$sql = "select * from User where User_ID=" . $user_id;
 								$result = $conn->query($sql);
 
@@ -96,17 +96,17 @@
 
 		<div class="jumbotron" style="background-image:url('usebike.jpg');background-size:100% 100%;margin:5%">
 			<h1 style="color:#8080ff;text-align:center">You can use bikes right now!</h1>
-			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"location.php?user_id=" . $_SESSION["user_id"] . "\""; ?> role="button">Use Bikes</a></p>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"location.php?User_ID=" . $_SESSION["User_ID"] . "\""; ?> role="button">Use Bikes</a></p>
 		</div>
 
 		<div class="jumbotron" style="background-image:url('route.jpg');background-size:100% 100%;margin:5%">
 			<h1 style="color:#8080ff;text-align:center">Where have I gone by using ofo?</h1>
-			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"account.php?user_id=" . $_SESSION["user_id"] . "\""; ?> role="button">Check history routes</a></p>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"account.php?User_ID=" . $_SESSION["User_ID"] . "\""; ?> role="button">Check history routes</a></p>
 		</div>
 
 		<div class="jumbotron" style="background-image:url('recharge.jpg');background-size:100% 100%;margin:5%">
 			<h1 style="color:#8080ff;text-align:center">My balance is not enough for another trip?</h1>
-			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"balance.php?user_id=" . $_SESSION["user_id"] . "\""; ?> role="button">Recharge &amp; History recharge</a></p>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"balance.php?User_ID=" . $_SESSION["User_ID"] . "\""; ?> role="button">Recharge &amp; History recharge</a></p>
 		</div>
 
 	</body>

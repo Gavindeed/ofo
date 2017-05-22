@@ -34,11 +34,11 @@
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#">Locations <span class="sr-only">(current)</span></a></li>
-						<li><a href="#">Back to manager</a></li>
+						<li><a href="manager.php">Back to manager</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Logout</a></li>
-						<li><a href="#">Register</a></li>
+						<li><a href="index.html">Logout</a></li>
+						<li><a href="register.php">Register</a></li>
 					</ul>
 				</div><!-- /.navbar-collapse -->
 			</div><!-- /.container-fluid -->
@@ -56,7 +56,7 @@
 				}
 
 				
-				$user_id = $_GET["user_id"];
+				$user_id = $_GET["User_ID"];
 
 				$sql = "select * from Location";
 				$result = $conn->query($sql);
@@ -74,7 +74,7 @@
 					$result = $conn->query($sql);
 					$row = $result->fetch_assoc();
 					$number = $row["count(Bike_ID)"];
-					print "<a href=\"#\" class=\"list-group-item\">\n";
+					print "<a href=\"bike.php?User_ID=" . $user_id . "&Location_ID=" . $id . "\" class=\"list-group-item\">\n";
 					print "<span class=\"badge\">" . $number . "</span>\n";
 					print $name . "\n";
 					print "</a>\n";
