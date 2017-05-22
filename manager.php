@@ -81,7 +81,6 @@
 								print "<script>alert(\"No user specified!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 							}
 
-							$conn->close();
 						?>
 						</p>
 						<li><a href="#">Profile</a></li>
@@ -96,17 +95,17 @@
 
 		<div class="jumbotron" style="background-image:url('usebike.jpg');background-size:100% 100%;margin:5%">
 			<h1 style="color:#8080ff;text-align:center">You can use bikes right now!</h1>
-			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="location.php?" role="button">Use Bikes</a></p>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"location.php?user_id=" . $_SESSION["user_id"] . "\""; ?> role="button">Use Bikes</a></p>
 		</div>
 
 		<div class="jumbotron" style="background-image:url('route.jpg');background-size:100% 100%;margin:5%">
 			<h1 style="color:#8080ff;text-align:center">Where have I gone by using ofo?</h1>
-			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="#" role="button">Check history routes</a></p>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"account.php?user_id=" . $_SESSION["user_id"] . "\""; ?> role="button">Check history routes</a></p>
 		</div>
 
 		<div class="jumbotron" style="background-image:url('recharge.jpg');background-size:100% 100%;margin:5%">
 			<h1 style="color:#8080ff;text-align:center">My balance is not enough for another trip?</h1>
-			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="#" role="button">Recharge &amp; History recharge</a></p>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" <?php print "href=\"balance.php?user_id=" . $_SESSION["user_id"] . "\""; ?> role="button">Recharge &amp; History recharge</a></p>
 		</div>
 
 	</body>
