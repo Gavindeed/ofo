@@ -16,8 +16,8 @@
 	
 		<script type="text/javascript">
 			function check() {
-				var x = document.forms["register"]["Password"];
-				var y = document.forms["register"]["RePassword"];
+				var x = document.forms["register"]["Password"].value;
+				var y = document.forms["register"]["RePassword"].value;
 				if(x != y) {
 					alert("Retype a wrong password!" + x + ":" + y);
 					return false;
