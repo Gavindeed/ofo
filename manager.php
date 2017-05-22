@@ -35,6 +35,7 @@
 					<ul class="nav navbar-nav">
 						<p class="navbar-text">
 						<?php
+							session_start();
 							$servername = "localhost";
 							$username = "root";
 
@@ -44,14 +45,41 @@
 								die("Connection failed! " . $conn->connect_error);
 							}
 
-							$user_id = $_GET["user_id"];
-							$sql = "select * from User where User_ID=" . $user_id;
-							$result = $conn->query($sql);
+							if(isset($_POST["User_name"]) && isset($_POST["Password"])) {
+								$sql = "select * from User where User_name=" . $_POST["User_name"] . " and Password=" . $_POST["Password"];
+								$result = $conn->query($sql);
+								if($result->num_rows > 0) {
+									$row = $result->fetch_assoc();
+									print $row["User_name"];
+									$_SESSION["user_id"] = $row["User_ID"];
+								} else {
+									print "<script>alert(\"Wrong password!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
+								}
+							} else if(isset($_SESSION["user_id"])) {
+								$sql = "select * from User where User_ID=" . $user_id;
+								$result = $conn->query($sql);
 
-							if($result->num_rows > 0) {
-								$row = $result->fetch_assoc();
-								print $row["User_name"];
+								if($result->num_rows > 0) {
+									$row = $result->fetch_assoc();
+									print $row["User_name"];
+								} else {
+									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
+								}
+							} else if(isset($_GET["user_id"]) {
+								$user_id = $_GET["user_id"];
+								$sql = "select * from User where User_ID=" . $user_id;
+								$result = $conn->query($sql);
+
+								if($result->num_rows > 0) {
+									$row = $result->fetch_assoc();
+									print $row["User_name"];
+								} else {
+									print "<script>alert(\"The user does not exist!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
+								}
+							} else {
+								print "<script>alert(\"No user specified!\");window.location.assign(\"http://47.92.92.228/ofo/index.html\");</script>\n";
 							}
+
 							$conn->close();
 						?>
 						</p>
@@ -67,7 +95,7 @@
 
 		<div class="jumbotron" style="background-image:url('usebike.jpg');background-size:100% 100%;margin:5%">
 			<h1 style="color:#8080ff;text-align:center">You can use bikes right now!</h1>
-			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="#" role="button">Use Bikes</a></p>
+			<p style="text-align:center"><a class="btn btn-primary btn-lg" href="location.php?" role="button">Use Bikes</a></p>
 		</div>
 
 		<div class="jumbotron" style="background-image:url('route.jpg');background-size:100% 100%;margin:5%">
