@@ -19,7 +19,7 @@
 				var x = document.forms["register"]["Password"];
 				var y = document.forms["register"]["RePassword"];
 				if(x != y) {
-					alert("Retype a wrong password!");
+					alert("Retype a wrong password!" + x + ":" + y);
 					return false;
 				} else if(x.length < 8) {
 					alert("Password must have a length of at least 8!");
