@@ -37,7 +37,7 @@
 				<h3 class="panel-title">Login</h3>
 			</div>
 			<div class="panel-body">
-				<form name="register" action="getregister.php" method="post">
+				<form name="register" action="getregister.php" method="post" onsubmit="check()">
 					<div class="input-group" style="margin:2%">
 						<span class="input-group-addon" id="basic-addon1">@</span>
 						<input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1" name="User_name">
@@ -50,7 +50,7 @@
 						<span class="input-group-addon" id="basic-addon1">**</span>
 						<input type="password" class="form-control" placeholder="Password again" aria-describedby="basic-addon1" name="RePassword">
 					</div>
-					<button type="submit" class="btn btn-default" onsubmit="check()">Submit</button>
+					<button type="submit" class="btn btn-default">Submit</button>
 				</form>
 			</div>
 		</div>
