@@ -33,7 +33,7 @@
 		
 		<div class="panel panel-default" style="margin:10%">
 			<div class="panel-heading">
-				<h3 class="panel-title">Login</h3>
+				<h3 class="panel-title">Register</h3>
 			</div>
 			<div class="panel-body">
 				<form name="register" action="getregister.php" method="post" onsubmit="return check()">
