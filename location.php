@@ -70,7 +70,7 @@
 				}
 
 				foreach($locations as $id=>$name) {
-					$sql = "select count(Bike_ID) from Bike where Location_ID=" . $id;
+					$sql = "select count(Bike_ID) from Bike where Location_ID=" . $id . " and In_use=0 and Is_broken=0";
 					$result = $conn->query($sql);
 					$row = $result->fetch_assoc();
 					$number = $row["count(Bike_ID)"];
